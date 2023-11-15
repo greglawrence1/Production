@@ -32,3 +32,4 @@ app/Providers/AppServiceProvider.php <br />
 
 In addition as Che routes the test site through a different port - Vite as a live css development tool will likely not connect,
 rather than <em>npm run dev</em>, use <em>npm run build</em> to see the site running.
+
