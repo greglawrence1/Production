@@ -22,7 +22,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return "hello";
+        return view('add-products-form');
     }
 
     /**
@@ -30,7 +31,17 @@ class ProductController extends Controller
      */
     public function store(StoreProductRequest $request)
     {
-        //
+        $product = new Product();
+        $product->title = $request->title;
+        $product->artist = $request->artist;
+        $product->price = $request->price;
+
+        $product->save();
+
+        //Product::create($request->except('_token'));
+
+        return "processedform";
+        return Redirect::route('product');
     }
 
     /**

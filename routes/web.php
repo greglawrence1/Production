@@ -19,9 +19,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/product', [ProductController::class, 'index']);
-Route::get('/product/{id}', [ProductController::class, 'show']);
+Route::get('/product', [ProductController::class, 'index'])->name('product');
+//Route::get('/product/{id}', [ProductController::class, 'show']);
 Route::get('/product/delete/{product}', [ProductController::class, 'destroy']);
+Route::get('/product/create', [ProductController::class, 'create'])->name('create');
+Route::post('/product', [ProductController::class, 'store']) ->name('store');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
