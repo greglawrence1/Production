@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Redirect;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('/menu');
 });
 
 Route::get('/product', [ProductController::class, 'index'])->name('product');
@@ -24,6 +25,7 @@ Route::get('/product', [ProductController::class, 'index'])->name('product');
 Route::get('/product/delete/{product}', [ProductController::class, 'destroy']);
 Route::get('/product/create', [ProductController::class, 'create'])->name('create');
 Route::post('/product', [ProductController::class, 'store']) ->name('store');
+//Route::get('/product', [ProductController::class, 'store']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

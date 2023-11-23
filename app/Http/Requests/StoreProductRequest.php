@@ -23,6 +23,8 @@ class StoreProductRequest extends FormRequest
     {
         return [
             'title' => 'required|max:255',
+            'artist' => 'required|max:255',
+            'price' => 'required|numeric',
         ];
     }
 }

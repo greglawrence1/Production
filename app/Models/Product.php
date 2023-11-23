@@ -11,4 +11,9 @@ class Product extends Model
 
     protected $fillable = ['artist', 'title', 'price'];
     protected $guarded = [];
+
+    public function productType()
+    {
+        return $this->hasOne('App\Models\ProductType', 'id', 'product_type_id');
+    }
 }

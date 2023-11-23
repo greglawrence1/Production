@@ -1,4 +1,6 @@
 <div>
+<a href="{{ url('')}}">Home</a>
+<a href="{{ url('/product')}}">Products</a>
     <!-- People find pleasure in different ways. I find it in keeping my mind clear. - Marcus Aurelius -->
     <div class="productlist p-2">
     @if ($errors->any())

@@ -21,8 +21,7 @@ class ProductController extends Controller
      * Show the form for creating a new resource.
      */
     public function create()
-    {
-        return "hello";
+    {       
         return view('add-products-form');
     }
 
@@ -31,18 +30,17 @@ class ProductController extends Controller
      */
     public function store(StoreProductRequest $request)
     {
-        $product = new Product();
+        /*$product = new Product();
         $product->title = $request->title;
         $product->artist = $request->artist;
         $product->price = $request->price;
 
-        $product->save();
+        $product->save();*/
 
-        //Product::create($request->except('_token'));
-
-        return "processedform";
-        return Redirect::route('product');
-    }
+        Product::create($request->except('_token'));
+        //return Redirect::route('product');
+        return redirect()->route('product');        
+    }   
 
     /**
      * Display the specified resource.
@@ -76,5 +74,10 @@ class ProductController extends Controller
     {
         $product->delete();
         return "Product gone";
+    }
+
+    public function hello()
+    {
+        return view('add-products-form');
     }
 }
