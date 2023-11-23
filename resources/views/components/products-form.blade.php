@@ -15,6 +15,14 @@
     <form method="POST" action="/product">
     @csrf    
         <div class="p-2 m-2 rounded-lg shadow-lg bg-gray-50 border-2 border-blue-900 max-w-md">
+            <div class = "p-2 m-2">
+                <label for="type">Product Type</label>
+                    <select id="type" name="type">
+                        <option value="CD">CD</option>
+                        <option value="Book">Book</option>
+                        <option value="Game">Game</option>
+                    </select>
+            </div>
             <div class="font-bold text-sm mb-2">
                 <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="title" name="title" type="text" placeholder="title">
             </div>
