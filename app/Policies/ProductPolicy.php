@@ -29,10 +29,12 @@ class ProductPolicy
      */
     public function create(User $user): bool
     {
-        /**return $user->is_admin == 1
+        return true;
+        /*return $user->is_admin == 1
                     ? Response::allow()
                     : Response::denyAsNotFound();  
                     */
+                    
     }
 
     /**
