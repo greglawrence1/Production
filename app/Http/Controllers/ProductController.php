@@ -76,8 +76,8 @@ class ProductController extends Controller
         return "Product gone";
     }
 
-    public function hello()
+    public function __construct()
     {
-        return view('add-products-form');
+        $this->authorizeResource(Product::class, 'product');
     }
 }
