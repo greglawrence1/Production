@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Product;
+use Illuminate\Support\Facades\Route;
 
 class ProductController extends Controller
 {
@@ -13,6 +14,9 @@ class ProductController extends Controller
      */
     public function index()
     {
+        if(Route::current()->getName()=='menu')
+        $products = Product::inRandomOrder()->limit(5)->get();
+        else
         $products = Product::all();
         return view('product', ['products'=>$products]);
     }
@@ -45,10 +49,11 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Product $product)
+    public function show(int $id)
     {
-         $products = Product::all();
-         return $products->artist;
+         $products = Product::find($id);
+         return view('product', ['products'=>$products]);
+         //return $products->artist;
     }
 
     /**
@@ -56,7 +61,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        //return view('product-form');
     }
 
     /**
