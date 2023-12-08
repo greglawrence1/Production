@@ -34,8 +34,7 @@ class ProductPolicy
                     ? Response::allow()
                     : Response::denyAsNotFound();  
                     
-                    
-                    
+                                      
     }
 
     /**

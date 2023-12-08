@@ -19,12 +19,12 @@ use Illuminate\Support\Facades\Redirect;
 Route::get('/', function () {
     return view('/menu');
 });
+//Route::get('/', [ProductController::class, 'index'])->name('home');
 
 Route::get('/product', [ProductController::class, 'index'])->name('product');
-Route::get('/product/{id}', [ProductController::class, 'show']);
-Route::get('/product/delete/{product}', [ProductController::class, 'destroy']);
 Route::get('/product/create', [ProductController::class, 'create'])->middleware('can:create, App\Models\Product')->name('create');
-Route::post('/product', [ProductController::class, 'store']) ->name('store');
+Route::get('/product/{id}', [ProductController::class, 'show'])->name('product-show');
+Route::get('/product/delete/{product}', [ProductController::class, 'destroy']);
 //Route::get('/product', [ProductController::class, 'store']);
 
 Route::get('/dashboard', function () {

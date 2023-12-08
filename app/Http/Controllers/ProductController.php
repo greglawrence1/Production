@@ -51,9 +51,12 @@ class ProductController extends Controller
      */
     public function show(int $id)
     {
-         $products = Product::find($id);
-         return view('product', ['products'=>$products]);
+        //Product::find($id);
+        $product = Product::find($id);
+        return view('product', ['products'=>$product]);
+        //return view('product', ['product'=>$product]);
          //return $products->artist;
+         //return $product;
     }
 
     /**
@@ -83,6 +86,6 @@ class ProductController extends Controller
 
     public function __construct()
     {
-        $this->authorizeResource(Product::class, 'product');
+        //$this->authorizeResource(Product::class, 'product');
     }
 }
