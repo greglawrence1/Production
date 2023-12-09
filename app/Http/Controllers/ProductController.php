@@ -51,10 +51,10 @@ class ProductController extends Controller
      */
     public function show(int $id)
     {
-        //Product::find($id);
+        Product::find($id);
         $product = Product::find($id);
-        return view('product', ['products'=>$product]);
-        //return view('product', ['product'=>$product]);
+        //return view('product', ['products'=>$product]);
+        return view('singleproduct', ['product'=>$product]);
          //return $products->artist;
          //return $product;
     }
