@@ -7,7 +7,6 @@ window.onload = function () {
     });
     document.addEventListener('click', e => {
         if (e.target.matches('button.select-product')) {
-            console.log('button pressed');
             getProductByID(e.target.value);
         }
         if (e.target.matches('button.update-product')) {
