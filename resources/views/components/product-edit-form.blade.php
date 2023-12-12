@@ -19,6 +19,7 @@
             <div class = "p-2 m-2">
                 <label for="type">Product Type</label>
                     <select id="type" name="type">
+                        <option value="{{$product->type ?? '' }}">{{$product['type']}}</option>
                         <option value="CD">CD</option>
                         <option value="Book">Book</option>
                         <option value="Game">Game</option>

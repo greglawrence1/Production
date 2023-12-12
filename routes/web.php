@@ -24,7 +24,7 @@ Route::get('/', function () {
 Route::get('/product', [ProductController::class, 'index'])->name('product');
 Route::get('/product/create', [ProductController::class, 'create'])->middleware('can:create, App\Models\Product')->name('create');
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('product-show');
-Route::put('/product/{id}/edit', [ProductController::class, 'edit'])->name('product-edit');
+Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->name('product-edit');
 Route::get('/product/delete/{product}', [ProductController::class, 'destroy']);
 
 Route::get('/dashboard', function () {
