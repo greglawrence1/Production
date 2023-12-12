@@ -64,7 +64,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //return view('product-form');
+        return view('product-edit-form');
     }
 
     /**

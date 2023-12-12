@@ -10,7 +10,7 @@
         @can('purchase-product')
         <button value = "{{$product['id']}}" class="bg-red-400 hover:bg-red-700 text-white font-bold py-2 px-2 rounded-full buy-product">Buy</button>
         @endcan
-        @can('edit-product')
+        @can('edit-product', App\Models\Product::class)
         <button value = "{{$product['id']}}" class="bg-red-400 hover:bg-red-700 text-white font-bold py-2 px-2 rounded-full update-product">Edit</button>
         @endcan
     @endif
