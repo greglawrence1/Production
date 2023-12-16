@@ -29,5 +29,6 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('edit-product', function (User $user){
             return $user->is_admin; //returns true if NOT admin
         });
+
     }
 }

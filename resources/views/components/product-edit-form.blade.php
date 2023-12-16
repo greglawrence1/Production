@@ -13,8 +13,9 @@
     </div>
     @endif
     <form method="POST" action="">
-        @method('PUT')
+
     @csrf    
+    @method('PATCH')
         <div class="p-2 m-2 rounded-lg shadow-lg bg-gray-50 border-2 border-blue-900 max-w-md">
             <div class = "p-2 m-2">
                 <label for="type">Product Type</label>
