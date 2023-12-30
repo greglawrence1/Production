@@ -18,9 +18,9 @@
             <div class = "p-2 m-2">
                 <label for="type">Product Type</label>
                     <select id="type" name="type">
-                        <option value="CD">CD</option>
-                        <option value="Book">Book</option>
-                        <option value="Game">Game</option>
+                        <option value="2">CD</option>
+                        <option value="1">Book</option>
+                        <option value="3">Game</option>
                     </select>
             </div>
             <div class="font-bold text-sm mb-2">

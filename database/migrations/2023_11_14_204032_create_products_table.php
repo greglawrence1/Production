@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('artist');
             $table->string('title');
             $table->integer('price');
-            
-            
+           
+                   
         });
     }
 
