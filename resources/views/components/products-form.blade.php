@@ -17,7 +17,7 @@
         <div class="p-2 m-2 rounded-lg shadow-lg bg-gray-50 border-2 border-blue-900 max-w-md">
             <div class = "p-2 m-2">
                 <label for="type">Product Type</label>
-                    <select id="type" name="type">
+                    <select id="product_type_id" name="product_type_id">
                         <option value="2">CD</option>
                         <option value="1">Book</option>
                         <option value="3">Game</option>
