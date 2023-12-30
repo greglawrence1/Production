@@ -14,6 +14,6 @@ class Product extends Model
 
     public function productType()
     {
-        return $this->hasOne('App\Models\ProductType', 'id', 'product_type_id');
+        return $this->belongsTo('App\Models\ProductType', 'product_type_id', 'id');
     }
 }
