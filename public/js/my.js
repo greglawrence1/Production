@@ -15,6 +15,9 @@ window.onload = function () {
         if (e.target.matches('button.buy-product')) {
             buyProductByID(e.target.value);
         }
+        if (e.target.matches('button.delete-product')){
+            deleteProductByID(e.target.value);
+        }
     });
 }
 
@@ -46,5 +49,17 @@ async function filterByProductType(id) {
         } catch (error) {
             console.error(error);
         }
+    }
+}
+
+async function deleteProductByID(id) {
+    try{
+        const response = await axios.delete('/product/' + id);
+        if(response.data.msg==='success'){
+            alert('Successfully deleted');
+            window.location = '/product';
+        }
+    } catch (error){
+        console.error(error);
     }
 }

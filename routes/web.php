@@ -27,7 +27,7 @@ Route::post('/product', [ProductController::class, 'store'])->name('store');
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('product-show');
 Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->name('product-edit');
 Route::patch('/product/{id}/edit', [ProductController::class, 'update'])->middleware('can:update, App\Models\Product')->name('product-edit');
-//Route::get('/product/delete/{product}', [ProductController::class, 'destroy']);
+Route::delete('/product/delete/{product}', [ProductController::class, 'destroy']);
 // Route::middleware(['can:create,  App\Models\Product'])->group(function() {
 //     Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->name('product-edit');
 //     Route::patch('/product/{id}/edit', [ProductController::class, 'update'])-name('product-updayr');
