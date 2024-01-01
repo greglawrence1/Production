@@ -41,7 +41,7 @@ class ProductController extends Controller
 
         $product->save();*/
         $data = $request->except('_token');
-        $data['type'] = $request->input('product_type_id');
+        $data[`type`] = $request->input('product_type_id');
         Product::create($data);
         //Product::create($request->except('_token'));
         
