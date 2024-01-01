@@ -12,7 +12,7 @@
         </ul>
     </div>
     @endif
-    <form method="POST" action="">
+    <form method="POST" action="{{ route('product-edit', ['id' => $product->id]) }}">
 
     @csrf    
     @method('PATCH')

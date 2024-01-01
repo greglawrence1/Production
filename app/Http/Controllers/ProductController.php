@@ -73,15 +73,25 @@ class ProductController extends Controller
      */
     public function update(UpdateProductRequest $request, $id)
     {         
+        
     $request->validate([
             'title' => 'required|max:255',
             'artist' => 'required|max:255',
             'price' => 'required|numeric',
-            'title' => 'required',
+            'type' => 'required|exists:product_types,id',
         ]);
 
         $product = Product::findOrFail($id);
-        $product->update($request->all());
+        $this->authorize('update', $product);
+        
+        
+        //$product->update($request->all());
+        $product->update([
+            'type'=> $request->type,
+            'artist'=> $request->artist,
+            'title'=> $request->title,
+            'price'=>$request->price,
+        ]);
 
         return redirect()->route('product');
     }
