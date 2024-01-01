@@ -40,8 +40,11 @@ class ProductController extends Controller
         $product->price = $request->price;
 
         $product->save();*/
-
-        Product::create($request->except('_token'));
+        $data = $request->except('_token');
+        $data['type'] = $request->input('product_type_id');
+        Product::create($data);
+        //Product::create($request->except('_token'));
+        
         //return Redirect::route('product');
         return redirect()->route('product');        
     }   
@@ -82,17 +85,16 @@ class ProductController extends Controller
         ]);
 
         $product = Product::findOrFail($id);
-        $this->authorize('update', $product);
         
-        
-        //$product->update($request->all());
-        $product->update([
+  
+        $product->update($request->all());
+        /*$product->update([
             'type'=> $request->type,
             'artist'=> $request->artist,
             'title'=> $request->title,
             'price'=>$request->price,
         ]);
-
+*/
         return redirect()->route('product');
     }
 

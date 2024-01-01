@@ -23,7 +23,7 @@ class ProductSeeder extends Seeder
             Product::create([
                 'artist' => $product['artist'],
                 'title' => $product['title'],
-                'price' => $product['price'],
+                'price' => $product['price'],               
                 'product_type_id' => $product['type'],                
                 
        ]);
