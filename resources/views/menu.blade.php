@@ -1,6 +1,7 @@
 
 <h1>Componenent 2 - Gregory Lawrence</h1>
 <a href="{{ url('/product')}}">Products</a>
+<a href="{{ url('/prod')}}">Browse 5 products</a>
 @can('create', App\Models\Product::class)
 <a href="{{ url('/product/create')}}">Add Products</a>
 @endcan

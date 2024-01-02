@@ -20,7 +20,17 @@ class ProductController extends Controller
         $products = Product::all();
         return view('product', ['products'=>$products]);
     }
-
+    /**
+     * Display random ones
+     */
+    public function browse()
+    {
+        if(Route::current()->getName()=='browse')
+        $products = Product::inRandomOrder()->limit(5)->get();
+        else
+        $products = Product::all();
+        return view('product', ['products'=>$products]);
+    }
     /**
      * Show the form for creating a new resource.
      */
