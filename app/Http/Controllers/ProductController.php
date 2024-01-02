@@ -6,19 +6,30 @@ use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        
+        /*
         if(Route::current()->getName()=='menu')
         $products = Product::inRandomOrder()->limit(5)->get();
         else
-        $products = Product::all();
-        return view('product', ['products'=>$products]);
+        */
+        $filter = $request->input('filter');
+        $orderDefault = $filter ?? 'artist';
+        $products = Product::orderBy($orderDefault)->get();
+
+        return view('product', ['products' => $products]);
+        
+        //$products = Product::all();
+        //return view('product', ['products'=>$products]);
+              
     }
     /**
      * Display random ones
