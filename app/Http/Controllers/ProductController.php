@@ -104,7 +104,7 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         $product->delete();
-        return "Product gone";
+        return response()->json(["msg"=>"success"]);
     }
 
     public function __construct()
