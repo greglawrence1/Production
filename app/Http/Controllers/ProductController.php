@@ -26,12 +26,16 @@ class ProductController extends Controller
         /*if(request('search')){
             $project->where('artist', 'like', '%' . request('search') . '%');
         */   
+        $typeChoice = $request->input('typeChoice');
         $search = $request->input('search');
         $filter = $request->input('filter');
         $orderDefault = $filter ?? 'artist';
         $products = Product::orderBy($orderDefault);
         if($search){
             $products-> where('artist', 'like', '%' . request('search') . '%');
+        }
+        if($typeChoice){
+            $products->where('product_type_id', $typeChoice);
         }
 
         $products = $products->paginate(2);
