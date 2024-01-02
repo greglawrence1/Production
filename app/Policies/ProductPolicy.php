@@ -39,9 +39,11 @@ class ProductPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function Update(User $user ): bool
+    public function Update(User $user ): Response
     {    
-         return true;
+        return $user->is_admin == 1
+                ? Response::allow()
+                : Response::denyAsNotFound();  
     }
 
     /**

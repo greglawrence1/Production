@@ -27,7 +27,7 @@ Route::get('/product/create', [ProductController::class, 'create'])->middleware(
 Route::post('/product', [ProductController::class, 'store'])->name('store');
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('product-show');
 Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->middleware('can:update, App\Models\Product')->name('product-edit');
-Route::patch('/product/{id}/edit', [ProductController::class, 'update'])->name('product-edit');
+Route::put('/product/{id}/edit', [ProductController::class, 'update'])->name('product-edit');
 Route::delete('/product/{product}', [ProductController::class, 'destroy'])->name('destroy');
 // Route::middleware(['can:create,  App\Models\Product'])->group(function() {
 //     Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->name('product-edit');

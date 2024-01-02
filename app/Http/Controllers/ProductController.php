@@ -105,8 +105,8 @@ class ProductController extends Controller
      */
     public function update(UpdateProductRequest $request, $id)
     {         
-        
-    $request->validate([
+  
+       /* $request->validate([
             'title' => 'required|max:255',
             'artist' => 'required|max:255',
             'price' => 'required|numeric',
@@ -114,15 +114,26 @@ class ProductController extends Controller
         ]);
     
         $product = Product::find($id);
-        $prodcuct->title = $request->get('title');
-        $prodcuct->artist = $request->get('artist');
-        $prodcuct->price = $request->get('price');
-        $prodcuct->type = $request->get('type');
+        $product->title = $request->get('title');
+        $product->artist = $request->get('artist');
+        $product->price = $request->get('price');
+        $product->type = $request->get('type');
 
+        //$product->save();
+        */
+        $product = Product::find($id);
+        $product->update([
+            'type'=> $request->type,
+            'artist'=> $request->artist,
+            'title'=> $request->title,
+            'price'=>$request->price,
+        ]);
+        
+        $product->update($request->all());
         $product->save();
-  
     
         return redirect()->route('product');
+        
     }
 
     /**
