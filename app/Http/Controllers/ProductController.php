@@ -29,10 +29,12 @@ class ProductController extends Controller
         $search = $request->input('search');
         $filter = $request->input('filter');
         $orderDefault = $filter ?? 'artist';
-        $products = Product::orderBy($orderDefault)->get();
+        $products = Product::orderBy($orderDefault);
         if($search){
             $project-> where('artist', 'like', '%' . request('search') . '%');
         }
+
+        $products = $products->paginate(2);
         return view('product', ['products' => $products]);
         
         //$products = Product::all();

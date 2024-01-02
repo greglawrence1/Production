@@ -21,4 +21,6 @@
             <x-product-card :product="$product"/>
         @endforeach
     </div>
+
+    {{ $products->links() }}
 </x-app-layout>
