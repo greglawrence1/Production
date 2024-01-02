@@ -31,7 +31,7 @@ class ProductController extends Controller
         $orderDefault = $filter ?? 'artist';
         $products = Product::orderBy($orderDefault);
         if($search){
-            $project-> where('artist', 'like', '%' . request('search') . '%');
+            $products-> where('artist', 'like', '%' . request('search') . '%');
         }
 
         $products = $products->paginate(2);
