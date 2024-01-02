@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASE</title>
     @vite('resources/css/app.css')
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>    
+      
     <script src="{{asset('js/app.js') }}"></script>
     <script src="{{asset('js/bootstrap.js') }}"></script>
     <script src="{{asset('js/my.js') }}"></script>

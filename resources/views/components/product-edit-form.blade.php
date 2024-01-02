@@ -37,10 +37,15 @@
                 <input value="{{($product->price ?? 0)/100 }}" type="number"  step='0.01' value='0.00' class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="price" name="price" type="text" placeholder="price">
             </p>   
             <div class="flex items-center justify-end mt-4 top-auto">
-                <button value="{{$product->id}}" type="button" class="bg-gray-800 text-white text-xs px-2 py-2 rounded-md mb-2 mr-2 uppercase hover:underline delete-product">Remove</button>
                 <button type="submit" class="bg-gray-800 text-white text-xs px-2 py-2 rounded-md mb-2 mr-2 uppercase hover:underline">Update</button>
             </div>
        </div>
     </form>
     </div>
 </div>
+
+<form action="{{ route('destroy', $product->id) }}" method="POST">
+    @csrf
+    @METHOD('DELETE')
+    <button type="submit"  class="bg-gray-800 text-white text-xs px-2 py-2 rounded-md mb-2 mr-2 uppercase hover:underline">Delete</button>
+</form>

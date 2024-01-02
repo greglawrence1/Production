@@ -21,10 +21,18 @@ class ProductController extends Controller
         $products = Product::inRandomOrder()->limit(5)->get();
         else
         */
+
+        $project = Product::query();
+        /*if(request('search')){
+            $project->where('artist', 'like', '%' . request('search') . '%');
+        */   
+        $search = $request->input('search');
         $filter = $request->input('filter');
         $orderDefault = $filter ?? 'artist';
         $products = Product::orderBy($orderDefault)->get();
-
+        if($search){
+            $project-> where('artist', 'like', '%' . request('search') . '%');
+        }
         return view('product', ['products' => $products]);
         
         //$products = Product::all();
@@ -115,7 +123,7 @@ class ProductController extends Controller
             'title'=> $request->title,
             'price'=>$request->price,
         ]);
-*/
+        */
         return redirect()->route('product');
     }
 
@@ -124,8 +132,10 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
+        
         $product->delete();
-        return response()->json(["msg"=>"success"]);
+        //return response()->json(["msg"=>"success"]);
+        return redirect()->route('product');
     }
 
     public function __construct()

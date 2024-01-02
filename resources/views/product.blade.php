@@ -11,6 +11,10 @@
 </select>
 <button type="submit">Apply Filter</button>
 </form>
+<form action="{{ route('product') }}" method="GET">
+    <input type="text" placeholder="Search.." name="search" id="search">
+    <button type="submit">Search</button>
+</form>
 
     <div class="grid grid-cols-4">
         @foreach($products as $product)
