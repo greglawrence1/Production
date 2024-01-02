@@ -112,18 +112,16 @@ class ProductController extends Controller
             'price' => 'required|numeric',
             'type' => 'required|exists:product_types,id',
         ]);
+    
+        $product = Product::find($id);
+        $prodcuct->title = $request->get('title');
+        $prodcuct->artist = $request->get('artist');
+        $prodcuct->price = $request->get('price');
+        $prodcuct->type = $request->get('type');
 
-        $product = Product::findOrFail($id);
-        
+        $product->save();
   
-        $product->update($request->all());
-        /*$product->update([
-            'type'=> $request->type,
-            'artist'=> $request->artist,
-            'title'=> $request->title,
-            'price'=>$request->price,
-        ]);
-        */
+    
         return redirect()->route('product');
     }
 
