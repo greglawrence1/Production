@@ -77,6 +77,11 @@ class ProductController extends Controller
         $product->save();*/
         $data = $request->except('_token');
         $data[`type`] = $request->input('product_type_id');
+
+        if($request->file('file')!=null){
+            $imagename = $request->file('file')->store('public/images');
+            $data->imagename = str_replace("public/images/", "", $imagename);
+        }
         Product::create($data);
         //Product::create($request->except('_token'));
         

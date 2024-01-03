@@ -10,6 +10,12 @@
     <p>{{$product->title}}</p>
     <p>{{$product->artist}}</p>
     <p>{{$product->price}}</p>
+    <img src="\images\no_image.jpg">
+    @if ($product->imagename=="no_image.png")
+    <img src="{{asset('images/'.$product->imagename)}}" alt="product" class= "m-5 w-40 max-w-xs">
+    @else 
+    <img src="{{asset('storage/images/'.$product->imagename)}}" alt="product" class= "m-5 w-40 max-w-xs">
+    @endif    
     <p>{{$product->productType->type}}</p>
     @if(Route::currentRouteName()=='product')
     <button value = "{{$product->id}}" class="bg-red-400 hover:bg-red-700 text-white font-bold py-2 px-2 rounded-full select-product">Select</button>
