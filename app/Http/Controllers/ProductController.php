@@ -51,9 +51,10 @@ class ProductController extends Controller
     public function browse()
     {
         if(Route::current()->getName()=='browse')
-        $products = Product::inRandomOrder()->limit(5)->get();
+        $products = Product::inRandomOrder()->limit(5);
         else
         $products = Product::all();
+        $products = $products->paginate(5);
         return view('product', ['products'=>$products]);
     }
     /**
@@ -75,6 +76,7 @@ class ProductController extends Controller
         $product->price = $request->price;
 
         $product->save();*/
+
         $data = $request->except('_token');
         $data[`type`] = $request->input('product_type_id');
 
