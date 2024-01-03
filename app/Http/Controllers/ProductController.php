@@ -22,7 +22,7 @@ class ProductController extends Controller
         else
         */
 
-        $project = Product::query();
+       
         /*if(request('search')){
             $project->where('artist', 'like', '%' . request('search') . '%');
         */   
@@ -136,7 +136,7 @@ class ProductController extends Controller
         */
         $product = Product::find($id);
         $product->update([
-            'type'=> $request->type,
+            'product_type_id'=> $request->type,
             'artist'=> $request->artist,
             'title'=> $request->title,
             'price'=>$request->price,
