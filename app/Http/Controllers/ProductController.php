@@ -117,13 +117,13 @@ class ProductController extends Controller
     public function update(UpdateProductRequest $request, $id)
     {         
   
-       /* $request->validate([
+       $request->validate([
             'title' => 'required|max:255',
             'artist' => 'required|max:255',
             'price' => 'required|numeric',
             'type' => 'required|exists:product_types,id',
         ]);
-    
+        /*
         $product = Product::find($id);
         $product->title = $request->get('title');
         $product->artist = $request->get('artist');
