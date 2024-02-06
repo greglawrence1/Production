@@ -7,8 +7,8 @@
     @elseif($product->productType['id']==3)
     <div class="bg-yellow-200 p-1 rounded-lg shadow-lg">
     @endif
-    <p>{{$product->title}}</p>
-    <p>{{$product->artist}}</p>
+    <p>{{$product->brand}}</p>
+    <p>{{$product->name}}</p>
     <p>{{$product->price}}</p>
     <img src="\images\no_image.jpg">
     @if ($product->imagename=="no_image.png")

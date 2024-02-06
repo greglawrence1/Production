@@ -14,15 +14,15 @@ class ProductSeeder extends Seeder
     public function run(): void
     {
         $products = [
-            ['artist' => 'The Jam', 'title' => 'Modern World','price' => 399, 'type' => 2],
-            ['artist' => 'Amy Winehouse', 'title' => 'Back to Black','price' => 299, 'type' => 2],
-            ['artist' => 'Charles Dickens', 'title' => 'Great Expectations', 'price' => 399, 'type'=> 1],
+            ['name' => 'Chalk Ball', 'brand' => 'Decathlon','price' => 399, 'type' => 3],
+            ['name' => 'Large Chalk Bag', 'brand' => 'Xtra','price' => 299, 'type' => 1],
+            ['name' => 'Climbing Shoes', 'brand' => 'Scarpa', 'price' => 399, 'type'=> 2],
         ];
 
         foreach($products as $product) {
             Product::create([
-                'artist' => $product['artist'],
-                'title' => $product['title'],
+                'name' => $product['name'],
+                'brand' => $product['brand'],
                 'price' => $product['price'],               
                 'product_type_id' => $product['type'],                
                 

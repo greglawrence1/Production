@@ -14,9 +14,9 @@ class ProductTypeSeeder extends Seeder
     public function run(): void
     {
         $producttypes = [
-            'Book',
-            'CD',
-            'Game',
+            'Chalk Bag',
+            'Climbing Shoes',
+            'Chalk',
         ];
         foreach($producttypes as $producttype){
             ProductType::create([
