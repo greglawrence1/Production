@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class products-form extends Component
+class Productsform extends Component
 {
     /**
      * Create a new component instance.
