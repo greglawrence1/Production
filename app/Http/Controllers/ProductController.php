@@ -29,10 +29,10 @@ class ProductController extends Controller
         $typeChoice = $request->input('typeChoice');
         $search = $request->input('search');
         $filter = $request->input('filter');
-        $orderDefault = $filter ?? 'artist';
+        $orderDefault = $filter ?? 'name';
         $products = Product::orderBy($orderDefault);
         if($search){
-            $products-> where('artist', 'like', '%' . request('search') . '%');
+            $products-> where('name', 'like', '%' . request('search') . '%');
         }
         if($typeChoice){
             $products->where('product_type_id', $typeChoice);
@@ -120,8 +120,8 @@ class ProductController extends Controller
     {         
   
        $request->validate([
-            'title' => 'required|max:255',
-            'artist' => 'required|max:255',
+            'name' => 'required|max:255',
+            'brand' => 'required|max:255',
             'price' => 'required|numeric',
             'type' => 'required|exists:product_types,id',
         ]);
@@ -137,8 +137,8 @@ class ProductController extends Controller
         $product = Product::find($id);
         $product->update([
             'product_type_id'=> $request->type,
-            'artist'=> $request->artist,
-            'title'=> $request->title,
+            'name'=> $request->name,
+            'brand'=> $request->brand,
             'price'=>$request->price,
         ]);
         
