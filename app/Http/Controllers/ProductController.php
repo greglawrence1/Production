@@ -76,14 +76,16 @@ class ProductController extends Controller
         $product->price = $request->price;
 
         $product->save();*/
-
+        
         $data = $request->except('_token');
         $data[`type`] = $request->input('product_type_id');
+        
 
         if($request->file('file')!=null){
             $imagename = $request->file('file')->store('public/images');
             $data->imagename = str_replace("public/images/", "", $imagename);
         }
+        
         Product::create($data);
         //Product::create($request->except('_token'));
         
@@ -142,8 +144,8 @@ class ProductController extends Controller
             'price'=>$request->price,
         ]);
         
-        $product->update($request->all());
-        $product->save();
+        //$product->update($request->all());
+        //$product->save();
     
         return redirect()->route('product');
         
