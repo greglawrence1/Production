@@ -1,36 +1,19 @@
-
-<h1>Climbing Products</h1>
-<link href="{{ asset('resources/css/app.css') }}" rel="stylesheet">
-<div class="topnav">
-<a href="{{ url('/product')}}">Products</a>
-<a href="{{ url('/prod')}}">Browse 5 products</a>
-@can('create', App\Models\Product::class)
-<a href="{{ url('/product/create')}}">Add Products</a>
-@endcan
-</div>
-<div>
-    @auth
-        @include('layouts.settings_dropdown')
-    @endauth
-    @guest
-    <a href="{{ url('/login')}}">Login</a>
-    <a href="{{ url('/register')}}">Register</a>
-    @endguest
-</div>
-
+@vite('resources/css/app.css')
 <nav class="bg-gray-800 shadow">
     <div class="container mx-auto px-4">
         <div class="flex items-center justify-between h-16">
             <!-- Logo -->
             <div class="flex-shrink-0">
-                <a href="#" class="text-white text-lg font-semibold">Logo</a>
+                <img src="\images\apexclimbingco.jpg" alt="Logo" class="h-8">
             </div>
             <!-- Navigation links -->
             <div class="hidden md:block">
                 <div class="flex items-center space-x-4">
-                    <a href="#" class="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                    <a href="#" class="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">About</a>
-                    <a href="#" class="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                    <a href="{{ url('/')}}" class="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                    <a href="{{ url('/product')}}" class="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Products</a>
+                    <a href="{{ url('/prod')}}" class="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Lucky Products</a>
+                    <a href="{{ url('/login')}}" class="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Login</a>
+                    <a href="{{ url('/register')}}" class="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Register</a>
                 </div>
             </div>
             <!-- Mobile menu button (hidden on larger screens) -->
@@ -44,4 +27,23 @@
         </div>
     </div>
 </nav>
+
+<h1>Apex Climbing Co</h1>
+<img src="\images\apexclimbingco.jpg" alt="Logo" class="h-8">
+<div>
+@can('create', App\Models\Product::class)
+<a href="{{ url('/product/create')}}">Add Products</a>
+@endcan
+<!-- Display the content returned by the 'browse' method -->
+
+</div>
+<div>
+    @auth
+        @include('layouts.settings_dropdown')
+    @endauth
+    @guest
+    <a href="{{ url('/login')}}">Login</a>
+    <a href="{{ url('/register')}}">Register</a>
+    @endguest
+</div>
 <br>
