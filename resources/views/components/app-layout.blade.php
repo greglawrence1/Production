@@ -11,10 +11,13 @@
     <script src="{{asset('js/bootstrap.js') }}"></script>
     <script src="{{asset('js/my.js') }}"></script>
 </head>
-<body>
+
+<body class="background">
     
     @include('menu')
 
     {{$slot}}
+
 </body>
+
 </html>
