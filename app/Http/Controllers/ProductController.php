@@ -50,12 +50,16 @@ class ProductController extends Controller
      */
     public function browse()
     {
-        if(Route::current()->getName()=='browse')
+       /* if(Route::current()->getName()=='browse')
         $products = Product::inRandomOrder()->limit(5);
         else
         $products = Product::all();
         $products = $products->paginate(5);
         return view('product', ['products'=>$products]);
+        */
+        $products = Product::inRandomOrder()->limit(3)->get();
+
+        return view('product', ['products' => $products]);
     }
     /**
      * Show the form for creating a new resource.

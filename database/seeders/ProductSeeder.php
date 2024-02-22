@@ -17,6 +17,9 @@ class ProductSeeder extends Seeder
             ['name' => 'Chalk Ball', 'brand' => 'Decathlon','price' => 399, 'type' => 3],
             ['name' => 'Large Chalk Bag', 'brand' => 'Xtra','price' => 299, 'type' => 1],
             ['name' => 'Climbing Shoes', 'brand' => 'Scarpa', 'price' => 399, 'type'=> 2],
+            ['name' => 'Liquid Chalk', 'brand' => 'Rock Technologies','price' => 899, 'type' => 3],
+            ['name' => 'Medium Chalk Bag', 'brand' => 'Black Diamond','price' => 1199, 'type' => 1],
+            ['name' => 'Climbing Shoes', 'brand' => 'Evolve', 'price' => 399, 'type'=> 2],
         ];
 
         foreach($products as $product) {
