@@ -29,6 +29,9 @@ Route::get('/product/{id}', [ProductController::class, 'show'])->name('product-s
 Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->middleware('can:update, App\Models\Product')->name('product-edit');
 Route::put('/product/{id}/edit', [ProductController::class, 'update'])->name('product-edit');
 Route::delete('/product/{product}', [ProductController::class, 'destroy'])->name('destroy');
+
+Route::get('/about', function(){ return view('aboutpage');})->name('about');
+Route::get('/bouldering', function(){ return view('bouldering');})->name('bouldering');
 // Route::middleware(['can:create,  App\Models\Product'])->group(function() {
 //     Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->name('product-edit');
 //     Route::patch('/product/{id}/edit', [ProductController::class, 'update'])-name('product-updayr');
