@@ -27,6 +27,7 @@
                     @endcan
                     <a href="{{ url('/')}}" class="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Home</a>
                     <a href="{{ url('/about')}}" class="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">About Us</a>
+                    <a href="{{ url('/bouldering')}}" class="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">What is Climbing</a>
                     <a href="{{ url('/product')}}" class="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Products</a>     
                     <a href="{{ url('/prod')}}" class="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Lucky Products</a>
                     @guest
