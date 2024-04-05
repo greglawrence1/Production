@@ -53,26 +53,26 @@
 
 <h1>Apex Climbing Co</h1>
 <img src="\images\apexclimbingco.jpg" alt="Logo" class="h-400 w-300 mx-auto">
-
+<h1 style="text-align: center">A Peak Into some of the new Bouldering Walls!</h1>
 <div class="slideshow-container">
 
     <!-- Full-width images with number and caption text -->
     <div class="mySlides fade">
       <div class="numbertext">1 / 3</div>
-      <img src="\images\wall1.jpg" style="width:25%">
-      <div class="text">Caption Text</div>
+      <img src="\images\wall1.jpg" style="width:35%">
+      <div class="text">Wall 1 with new v5</div>
     </div>
   
     <div class="mySlides fade">
       <div class="numbertext">2 / 3</div>
-      <img src="\images\wall2.jpg" style="width:25%">
-      <div class="text">Caption Two</div>
+      <img src="\images\wall2.jpg" style="width:35%">
+      <div class="text">Wall 2 with brand new holds</div>
     </div>
   
     <div class="mySlides fade">
       <div class="numbertext">3 / 3</div>
-      <img src="\images\wall3.jpg" style="width:25%">
-      <div class="text">Caption Three</div>
+      <img src="\images\wall3.jpg" style="width:35%">
+      <div class="text">Wall 3 with nasty new slabs</div>
     </div>
   
     <!-- Next and previous buttons -->
