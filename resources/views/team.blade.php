@@ -40,7 +40,7 @@
               <p class="title">Marketing</p>
               <p>Our marketing expert from day one, to get our name out there.</p>
               <p>alice@example.com</p>
-              <p><button class="button">Contact</button></p>
+              <p><button id="contact" class="button">Contact</button></p>
             </div>
           </div>
         </div>
