@@ -19,6 +19,9 @@ window.onload = function () {
         if (e.target.matches('button.delete-product')){
             deleteProductByID(e.target.value);
         }
+        if (e.target.matches('.button')) {
+            alert("Email sent");
+        }
     });
 }
 
