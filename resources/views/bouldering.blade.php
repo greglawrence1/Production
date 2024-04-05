@@ -5,6 +5,7 @@
         </h2>
     </x-slot>
     <link rel="stylesheet" href="../styles.css">
+    <h1 style="text-align: center">Basic Climbing Equipment you will need to get you started!</h1>
     <div class="row">
         <div class="column">
           <img src="\images\chalkbag.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow">
@@ -56,19 +57,19 @@
       
           <!-- Thumbnail image controls -->
           <div class="column">
-            <img class="demo" src="chalkbag.jpg" onclick="currentSlide(1)" alt="Chalk Bag">
+            <img class="demo" src="\images\chalkbag.jpg" onclick="currentSlide(1)" alt="Chalk Bag">
           </div>
       
           <div class="column">
-            <img class="demo" src="climbingshoes.jpg" onclick="currentSlide(2)" alt="Climbing Shoes">
+            <img class="demo" src="\images\climbingshoes.jpg" onclick="currentSlide(2)" alt="Climbing Shoes">
           </div>
       
           <div class="column">
-            <img class="demo" src="chalk.jpg" onclick="currentSlide(3)" alt="Chalk">
+            <img class="demo" src="\images\chalk.jpg" onclick="currentSlide(3)" alt="Chalk">
           </div>
 
           <div class="column">
-            <img class="demo" src="yogamat.jpg" onclick="currentSlide(4)" alt="Yogamat">
+            <img class="demo" src="\images\yogamat.jpg" onclick="currentSlide(4)" alt="Yogamat">
           </div>
         </div>
       </div>
