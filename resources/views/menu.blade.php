@@ -9,6 +9,7 @@
     <script src="{{asset('js/app.js') }}"></script>
     <script src="{{asset('js/bootstrap.js') }}"></script>
     <script src="{{asset('js/my.js') }}"></script>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body style="background-image: url('images/background.jpg'); background-size: cover; background-position: center; z-index: -1;">
    <nav class="bg-gray-800 shadow z-10 h-16">
@@ -52,6 +53,40 @@
 
 <h1>Apex Climbing Co</h1>
 <img src="\images\apexclimbingco.jpg" alt="Logo" class="h-400 w-300 mx-auto">
+
+<div class="slideshow-container">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="\images\wall1.jpg" style="width:25%">
+      <div class="text">Caption Text</div>
+    </div>
+  
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="\images\wall2.jpg" style="width:25%">
+      <div class="text">Caption Two</div>
+    </div>
+  
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="\images\wall3.jpg" style="width:25%">
+      <div class="text">Caption Three</div>
+    </div>
+  
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+  
+  <!-- The dots/circles -->
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
 </body>
 
 <br>
