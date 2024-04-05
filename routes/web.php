@@ -33,6 +33,7 @@ Route::delete('/product/{product}', [ProductController::class, 'destroy'])->name
 Route::get('/about', function(){ return view('aboutpage');})->name('about');
 Route::get('/bouldering', function(){ return view('bouldering');})->name('bouldering');
 Route::get('/team', function(){ return view('team');})->name('team');
+Route::get('/wall', function(){ return view('wall');})->name('wall');
 // Route::middleware(['can:create,  App\Models\Product'])->group(function() {
 //     Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->name('product-edit');
 //     Route::patch('/product/{id}/edit', [ProductController::class, 'update'])-name('product-updayr');
