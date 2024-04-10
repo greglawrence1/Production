@@ -15,17 +15,7 @@ class ProductController extends Controller
      */
     public function index(Request $request)
     {
-        
-        /*
-        if(Route::current()->getName()=='menu')
-        $products = Product::inRandomOrder()->limit(5)->get();
-        else
-        */
-
-       
-        /*if(request('search')){
-            $project->where('artist', 'like', '%' . request('search') . '%');
-        */   
+         
         $typeChoice = $request->input('typeChoice');
         $search = $request->input('search');
         $filter = $request->input('filter');
@@ -41,8 +31,6 @@ class ProductController extends Controller
         $products = $products->paginate(2);
         return view('product', ['products' => $products]);
         
-        //$products = Product::all();
-        //return view('product', ['products'=>$products]);
               
     }
     /**
@@ -50,13 +38,7 @@ class ProductController extends Controller
      */
     public function browse()
     {
-       /* if(Route::current()->getName()=='browse')
-        $products = Product::inRandomOrder()->limit(5);
-        else
-        $products = Product::all();
-        $products = $products->paginate(5);
-        return view('product', ['products'=>$products]);
-        */
+       
         $products = Product::inRandomOrder()->limit(3)->get();
 
         return view('product', ['products' => $products]);
@@ -74,13 +56,7 @@ class ProductController extends Controller
      */
     public function store(StoreProductRequest $request)
     {
-        /*$product = new Product();
-        $product->title = $request->title;
-        $product->artist = $request->artist;
-        $product->price = $request->price;
-
-        $product->save();*/
-        
+       
         $data = $request->except('_token');
         $data[`type`] = $request->input('product_type_id');
         
@@ -91,9 +67,7 @@ class ProductController extends Controller
         }
         
         Product::create($data);
-        //Product::create($request->except('_token'));
         
-        //return Redirect::route('product');
         return redirect()->route('product');        
     }   
 
@@ -104,10 +78,9 @@ class ProductController extends Controller
     {
         Product::find($id);
         $product = Product::find($id);
-        //return view('product', ['products'=>$product]);
+        
         return view('singleproduct', ['product'=>$product]);
-         //return $products->artist;
-         //return $product;
+         
     }
 
     /**
@@ -131,15 +104,6 @@ class ProductController extends Controller
             'price' => 'required|numeric',
             'type' => 'required|exists:product_types,id',
         ]);
-        /*
-        $product = Product::find($id);
-        $product->title = $request->get('title');
-        $product->artist = $request->get('artist');
-        $product->price = $request->get('price');
-        $product->type = $request->get('type');
-
-        //$product->save();
-        */
         $product = Product::find($id);
         $product->update([
             'product_type_id'=> $request->type,
@@ -148,9 +112,6 @@ class ProductController extends Controller
             'price'=>$request->price,
         ]);
         
-        //$product->update($request->all());
-        //$product->save();
-    
         return redirect()->route('product');
         
     }
@@ -162,7 +123,7 @@ class ProductController extends Controller
     {
         
         $product->delete();
-        //return response()->json(["msg"=>"success"]);
+        
         return redirect()->route('product');
     }
 
