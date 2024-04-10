@@ -19,7 +19,6 @@ use Illuminate\Support\Facades\Redirect;
 Route::get('/', function () {
     return view('/menu');
 });
-//Route::get('/', [ProductController::class, 'index'])->name('home');
 
 Route::get('/product', [ProductController::class, 'index'])->name('product');
 Route::get('/prod', [ProductController::class, 'browse'])->name('browse');
@@ -34,12 +33,7 @@ Route::get('/about', function(){ return view('aboutpage');})->name('about');
 Route::get('/bouldering', function(){ return view('bouldering');})->name('bouldering');
 Route::get('/team', function(){ return view('team');})->name('team');
 Route::get('/wall', function(){ return view('wall');})->name('wall');
-// Route::middleware(['can:create,  App\Models\Product'])->group(function() {
-//     Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->name('product-edit');
-//     Route::patch('/product/{id}/edit', [ProductController::class, 'update'])-name('product-updayr');
-// });
-//Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->name('product-edit');
-//Route::patch('/product/{id}/edit', [ProductController::class, 'update'])-name('product-edit');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
