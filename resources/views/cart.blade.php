@@ -3,7 +3,7 @@
 
 @section('content')
 
-<table id="cart" class="table table-hover table-condensed">
+<table id="cart" class="table table-hover table-condensed" style="background: white;">
     <thead>
         <tr>
             <th style="width:50%">Product</th>
