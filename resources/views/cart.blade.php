@@ -1,6 +1,9 @@
+<x-app-layout>
 @extends('layout')
 
 @section('content')
+
+<script src="{{asset('js/my.js') }}"></script>
 <table id="cart" class="table table-hover table-condensed">
     <thead>
         <tr>
@@ -43,8 +46,8 @@
         </tr>
         <tr>
             <td colspan="5" class="text-right">
-                <a href="{{ url('/') }}" class="btn btn-danger"> <i class="fa fa-arrow-left"></i> Continue Shopping</a>
-                <button class="btn btn-success"><i class="fa fa-money"></i> Checkout</button>
+                <a href="{{ url('/product') }}" class="btn btn-danger"> <i class="fa fa-arrow-left"></i> Continue Shopping</a>
+                <button class="buy-product"><i class="fa fa-money"></i> Checkout</button>
             </td>
         </tr>
     </tfoot>
@@ -95,3 +98,5 @@
    
 </script>
 @endsection
+
+</x-app-layout>
