@@ -38,6 +38,7 @@ Route::get('cart', [ProductController::class, 'cart'])->name('cart');
 Route::get('add-to-cart/{id}', [ProductController::class, 'addToCart'])->name('add_to_cart');
 Route::patch('update-cart', [ProductController::class, 'updateCart'])->name('update_cart');
 Route::delete('remove-from-cart', [ProductController::class, 'remove'])->name('remove_from_cart');
+Route::delete('purchased', [ProductController::class, 'purchased'])->name('purchased');
 
 
 Route::get('/dashboard', function () {

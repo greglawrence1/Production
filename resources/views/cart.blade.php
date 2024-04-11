@@ -3,7 +3,6 @@
 
 @section('content')
 
-<script src="{{asset('js/my.js') }}"></script>
 <table id="cart" class="table table-hover table-condensed">
     <thead>
         <tr>
@@ -44,12 +43,16 @@
         <tr>
             <td colspan="5" class="text-right"><h3><strong>Total ${{ $total }}</strong></h3></td>
         </tr>
-        <tr>
+        @if(session('cart'))
+            @foreach(session('cart') as $id => $details)
+        <tr data-id="{{  $id }}">
             <td colspan="5" class="text-right">
-                <a href="{{ url('/product') }}" class="btn btn-danger"> <i class="fa fa-arrow-left"></i> Continue Shopping</a>
-                <button class="buy-product"><i class="fa fa-money"></i> Checkout</button>
+                <button class="btn btn-success cart_delete"><i class="fa fa-money"></i> Checkout</button>
             </td>
         </tr>
+        @endforeach
+        @endif
+        <a href="{{ url('/product') }}" class="btn btn-danger"> <i class="fa fa-arrow-left"></i> Continue Shopping</a>
     </tfoot>
 </table>
 @endsection
@@ -95,7 +98,27 @@
             });
         }
     });
-   
+
+    $(".cart_delete").click(function(e) {
+            e.preventDefault();
+
+            var ele = $(this);
+
+            if (confirm("Do you really want to purchase this product?")) {
+                $.ajax({
+                    url: '{{ route('purchased') }}',
+                    method: "DELETE",
+                    data: {
+                        _token: '{{ csrf_token() }}',
+                        id: ele.parents("tr").attr("data-id")
+                    },
+                    success: function(response) {
+                        window.location.reload();
+                       
+                    }
+                });
+            }
+        });
 </script>
 @endsection
 
