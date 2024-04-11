@@ -34,6 +34,11 @@ Route::get('/bouldering', function(){ return view('bouldering');})->name('boulde
 Route::get('/team', function(){ return view('team');})->name('team');
 Route::get('/wall', function(){ return view('wall');})->name('wall');
 
+Route::get('cart', [ProductController::class, 'cart'])->name('cart');
+Route::get('add-to-cart/{id}', [ProductController::class, 'addToCart'])->name('add_to_cart');
+Route::patch('update-cart', [ProductController::class, 'updateCart'])->name('update_cart');
+Route::delete('remove-from-cart', [ProductController::class, 'remove'])->name('remove_from_cart');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
