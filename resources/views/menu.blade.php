@@ -32,6 +32,7 @@
                     <a href="{{ url('/prod')}}" class="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Lucky Products</a>
                     <a href="{{ url('/team')}}" class="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">The Team</a>
                     <a href="{{ url('/wall')}}" class="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">The Wall</a>
+                    <a href="{{ url('/cart')}}" class="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Cart</a>
                     @guest
                     <a href="{{ url('/login')}}" class="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Login</a>
                     <a href="{{ url('/register')}}" class="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Register</a>
