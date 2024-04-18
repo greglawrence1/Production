@@ -37,14 +37,14 @@
     display: inline-block;
     padding: 8px;
     color: white;
-    background-color: #000;
+    background-color: black;
     text-align: center;
     cursor: pointer;
     width: 100%;
   }
   
   .button:hover {
-    background-color: #555;
+    background-color: gray;
   }
 
   * {box-sizing: border-box;}
@@ -62,7 +62,7 @@
   
   .img-magnifier-glass {
     position: absolute;
-    border: 3px solid #000;
+    border: 3px solid black;
     border-radius: 50%;
     cursor: none;
     width: 100px;
